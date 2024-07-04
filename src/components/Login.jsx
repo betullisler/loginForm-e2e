@@ -33,7 +33,7 @@ export default function Login() {
     const [errors, setErrors] = useState(initialErrors);
     const [isValid, setIsValid] = useState(false);
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const validateEmail = (email) => {
         return String(email)
@@ -83,9 +83,9 @@ export default function Login() {
                     );
                     if (user) {
                         setForm(initialForm);
-                        history.push('/main');
+                        navigate('/');
                     } else {
-                        history.push('/error');
+                        navigate('/success');
                     }
                 });
         }
